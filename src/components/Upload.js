@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import { storage } from "../firbaseConfig";
+import { doc, setDoc, getFirestore, storage } from "../firbaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 function Upload() {
@@ -54,8 +54,15 @@ function Upload() {
       () => {
         // download url
         getDownloadURL(uploadTask.snapshot.ref)
-          .then((url) => {
-            console.log(url);
+          .then(async (url) => {
+            // get database( getFirestore), collection name (videos-collection) on firestore and document name
+            let docRef = doc(getFirestore(), "videos-collection", file.name);
+
+            // set document content
+            await setDoc(docRef, {
+              videoUrl: url,
+              name: file.name,
+            });
           })
           .then(() => {
             // reset file name & percent
