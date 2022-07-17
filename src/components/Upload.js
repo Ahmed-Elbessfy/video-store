@@ -8,7 +8,7 @@ function Upload() {
   // filename to use as an alternative to the upload file input
   const [fileName, setFileName] = useState("");
   // percent to show uploading progress
-  const [percent, setPercent] = useState(0);
+  const [percent, setPercent] = useState(null);
 
   // ref to the upload input
   const uploadRef = useRef(null);
@@ -67,7 +67,7 @@ function Upload() {
           .then(() => {
             // reset file name & percent
             setFileName("");
-            setPercent(0);
+            setPercent(null);
           });
       }
     );
@@ -88,7 +88,7 @@ function Upload() {
         Select
       </button>
       <p className="file-name">{fileName}</p>
-      <p className="upload-percent">{percent} "% done"</p>
+      <p className="upload-percent">{percent && `${percent} % done`}</p>
     </section>
   );
 }

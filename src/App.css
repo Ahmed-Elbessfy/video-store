@@ -15,6 +15,7 @@
 .file-name,
 .upload-percent {
   font-size: 1.2rem;
+  height: 1rem;
 }
 
 .videos-container {
