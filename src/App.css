@@ -3,6 +3,20 @@
   margin: 2rem auto;
 }
 
+.upload-btn {
+  width: 10rem;
+  border: none;
+  box-shadow: 0px 0px 4px 5px #d1cfcf;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.file-name,
+.upload-percent {
+  font-size: 1.2rem;
+}
+
 .videos-container {
   width: 80%;
   max-width: 35rem;

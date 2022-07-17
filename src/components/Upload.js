@@ -84,9 +84,11 @@ function Upload() {
         style={{ display: "none" }}
       />
       {/* upload file button  */}
-      <button onClick={handleClick}>Select</button>
-      <p>{fileName}</p>
-      <p>{percent} "% done"</p>
+      <button onClick={handleClick} className="upload-btn">
+        Select
+      </button>
+      <p className="file-name">{fileName}</p>
+      <p className="upload-percent">{percent} "% done"</p>
     </section>
   );
 }
