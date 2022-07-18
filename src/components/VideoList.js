@@ -23,12 +23,9 @@ function VideoList() {
       {videosSource &&
         videosSource.map((video, i) => {
           return (
-            <video
-              key={i}
-              src={video.videoUrl}
-              alt={video.name}
-              controls
-            ></video>
+            <video key={i} alt={video.name} controls>
+              <source src={`${video.videoUrl}#t=0.1`} />
+            </video>
           );
         })}
     </div>
